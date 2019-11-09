@@ -28,7 +28,7 @@ class BlobResponse extends BaseResponse
     parent::__construct($blob['blb_data'], 200);
 
     $this->headers->set('Content-Transfer-Encoding', 'binary')
-                  ->set('Disposition', HeaderHelper::contentDisposition($disposition, $blob['blb_filename']))
+                  ->set('Content-Disposition', HeaderHelper::contentDisposition($disposition, $blob['blb_filename']))
                   ->set('Content-Type', $blob['blb_mime_type'])
                   ->set('Content-Length', Cast::toOptString($blob['blb_size']))
                   ->setTimestamp('Last-Modified', $blob['blb_timestamp']);

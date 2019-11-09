@@ -75,7 +75,7 @@ class FileResponse extends BaseResponse
     $this->filename = $filename ?? $this->file->getBasename();
 
     $this->headers->set('Content-Transfer-Encoding', 'binary')
-                  ->set('Disposition', HeaderHelper::contentDisposition($disposition, $this->filename))
+                  ->set('Content-Disposition', HeaderHelper::contentDisposition($disposition, $this->filename))
                   ->set('Content-Type', $mimeType)
                   ->set('Content-Length', Cast::toOptString($this->file->getSize()))
                   ->setTimestamp('Last-Modified', $this->file->getMTime());

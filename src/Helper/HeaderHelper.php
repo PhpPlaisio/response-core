@@ -33,14 +33,11 @@ class HeaderHelper
         throw new \InvalidArgumentException('Illegal filename');
       }
 
-      $value = sprintf("Content-Disposition: %s; filename*=%s''%s",
-                       $disposition,
-                       Html::$encoding,
-                       rawurlencode($filename));
+      $value = sprintf("%s; filename*=%s''%s", $disposition, Html::$encoding, rawurlencode($filename));
     }
     else
     {
-      $value = sprintf('Content-Disposition: %s', $disposition);
+      $value = $disposition;
     }
 
     return $value;
