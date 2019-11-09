@@ -28,12 +28,8 @@ class HeaderHelper
 
     if ($filename!==null && $filename!=='')
     {
-      if (strpbrk($filename, "\\/*'%")!==false)
-      {
-        throw new \InvalidArgumentException('Illegal filename');
-      }
-
-      $value = sprintf("%s; filename*=%s''%s", $disposition, Html::$encoding, rawurlencode($filename));
+      $filename = mb_ereg_replace('/[/\\\\]/', '_', $filename);
+      $value    = sprintf("%s; filename*=%s''%s", $disposition, Html::$encoding, rawurlencode($filename));
     }
     else
     {
