@@ -131,21 +131,26 @@ class ResponseHeader
       return $this->set($name, null);
     }
 
-    if ($value instanceof \DateTime)
+    switch (true)
     {
-      $date = \DateTimeImmutable::createFromMutable($value);
-    }
-    elseif (is_string($value))
-    {
-      $date = \DateTimeImmutable::createFromFormat('Y-m-d H:i:s', $value);
-    }
-    elseif (is_int($value))
-    {
-      $date = \DateTimeImmutable::createFromFormat('U', Cast::toManString($value));
-    }
-    else
-    {
-      $date = $value;
+      case $value instanceof \DateTimeImmutable:
+        $date = $value;
+        break;
+
+      case is_string($value):
+        $date = \DateTimeImmutable::createFromFormat('Y-m-d H:i:s', $value);
+        break;
+
+      case is_int($value):
+        $date = \DateTimeImmutable::createFromFormat('U', Cast::toManString($value));
+        break;
+
+      case $value instanceof \DateTime:
+        $date = \DateTimeImmutable::createFromMutable($value);
+        break;
+
+      default:
+        throw new \InvalidArgumentException('Expecting DateTimeInterface, string, int or null.');
     }
 
     $date = $date->setTimezone(new \DateTimeZone('UTC'));
