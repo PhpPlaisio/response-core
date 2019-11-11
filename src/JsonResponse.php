@@ -30,7 +30,7 @@ class JsonResponse extends BaseResponse
     $type = sprintf('%s; charset=%s',
                     ($callback===null) ? 'application/json' : 'application/javascript',
                     Html::$encoding);
-    $this->headers->set('Content-Length', Cast::toOptString($this->content))
+    $this->headers->set('Content-Length', Cast::toOptString(strlen($this->content)))
                   ->set('Content-Type', $type);
   }
 
