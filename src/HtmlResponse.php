@@ -7,7 +7,7 @@ use SetBased\Abc\Helper\Cast;
 use SetBased\Abc\Helper\Html;
 
 /**
- * An HTTP response sending HTML to the user agent.
+ * An HTTP response sending an HTML page to the user agent.
  */
 class HtmlResponse extends BaseResponse
 {
