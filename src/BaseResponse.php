@@ -264,21 +264,6 @@ class BaseResponse implements Response
 
   //--------------------------------------------------------------------------------------------------------------------
   /**
-   * Sets the content of the response.
-   *
-   * @param string $content The content.
-   *
-   * @return BaseResponse
-   */
-  public function setContent(string $content): BaseResponse
-  {
-    $this->content = $content;
-
-    return $this;
-  }
-
-  //--------------------------------------------------------------------------------------------------------------------
-  /**
    * Sets the status code of the response.
    *
    * @param int $status The status code of the response.
@@ -328,6 +313,21 @@ class BaseResponse implements Response
 
     $this->headers->send();
     // xxx cookies
+  }
+
+  //--------------------------------------------------------------------------------------------------------------------
+  /**
+   * Sets the content of the response.
+   *
+   * @param string $content The content.
+   *
+   * @return BaseResponse
+   */
+  protected function setContent(string $content): BaseResponse
+  {
+    $this->content = $content;
+
+    return $this;
   }
 
   //--------------------------------------------------------------------------------------------------------------------
