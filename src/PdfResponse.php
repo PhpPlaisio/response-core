@@ -19,7 +19,6 @@ class PdfResponse extends BaseResponse
    * @param string      $pdf         The PDF document.
    * @param string|null $filename    The filename of the PDF document.
    * @param string      $disposition Either 'inline' or 'attachment'.
-   * @param bool        $isPublic    True if and only if the content is public.
    *
    * @throws \Exception
    * @api
@@ -28,15 +27,14 @@ class PdfResponse extends BaseResponse
    */
   public function __construct(string $pdf,
                               ?string $filename,
-                              string $disposition = 'attachment',
-                              bool $isPublic = false)
+                              string $disposition = 'attachment')
   {
     parent::__construct($pdf, 200);
 
     $this->headers->set('Content-Type', 'application/pdf')
                   ->set('Content-Length', Cast::toOptString(strlen($pdf)))
                   ->set('Content-Disposition', HeaderHelper::contentDisposition($disposition, $filename))
-                  ->set('Cache-Control', HeaderHelper::cacheControl(false, $isPublic))
+                  ->set('Cache-Control', HeaderHelper::cacheControl(false, false))
                   ->setTimestamp('Last-Modified', new DateTimeImmutable());
   }
 
