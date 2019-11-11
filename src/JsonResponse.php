@@ -4,6 +4,7 @@ declare(strict_types=1);
 namespace SetBased\Abc\Response;
 
 use SetBased\Abc\Helper\Cast;
+use SetBased\Abc\Helper\Html;
 
 /**
  * An HTTP response sending a dynamically generated JSON data to the user agent.
@@ -26,8 +27,11 @@ class JsonResponse extends BaseResponse
   {
     parent::__construct($this->create($data, $isJson, $callback), 200);
 
+    $type = sprintf('%s; charset=%s',
+                    ($callback===null) ? 'application/json' : 'application/javascript',
+                    Html::$encoding);
     $this->headers->set('Content-Length', Cast::toOptString($this->content))
-                  ->set('Content-Type', ($callback===null) ? 'application/json' : 'application/javascript');
+                  ->set('Content-Type', $type);
   }
 
   //--------------------------------------------------------------------------------------------------------------------

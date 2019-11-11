@@ -23,7 +23,7 @@ class JsonResponseTest extends TestCase
     $output   = $response->getContent();
 
     self::assertSame('["hello","world"]', $output);
-    self::assertSame('application/json', $response->headers->get('Content-Type'));
+    self::assertSame('application/json; charset=UTF-8', $response->headers->get('Content-Type'));
   }
 
   //--------------------------------------------------------------------------------------------------------------------
@@ -38,7 +38,7 @@ class JsonResponseTest extends TestCase
     $output   = $response->getContent();
 
     self::assertSame('myCallback(["hello","world"]);', $output);
-    self::assertSame('application/javascript', $response->headers->get('Content-Type'));
+    self::assertSame('application/javascript; charset=UTF-8', $response->headers->get('Content-Type'));
   }
 
   //--------------------------------------------------------------------------------------------------------------------
@@ -53,7 +53,7 @@ class JsonResponseTest extends TestCase
     $output   = $response->getContent();
 
     self::assertSame('["hello","world"]', $output);
-    self::assertSame('application/json', $response->headers->get('Content-Type'));
+    self::assertSame('application/json; charset=UTF-8', $response->headers->get('Content-Type'));
   }
 
   //--------------------------------------------------------------------------------------------------------------------
@@ -68,7 +68,7 @@ class JsonResponseTest extends TestCase
     $output   = $response->getContent();
 
     self::assertSame('myCallback(["hello","world"]);', $output);
-    self::assertSame('application/javascript', $response->headers->get('Content-Type'));
+    self::assertSame('application/javascript; charset=UTF-8', $response->headers->get('Content-Type'));
   }
 
   //--------------------------------------------------------------------------------------------------------------------
