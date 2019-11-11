@@ -35,7 +35,6 @@ class FileResponse extends BaseResponse
   private $remove = false;
 
   //--------------------------------------------------------------------------------------------------------------------
-
   /**
    * Object constructor.
    *

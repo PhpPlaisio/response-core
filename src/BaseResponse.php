@@ -171,7 +171,6 @@ class BaseResponse implements Response
   protected $version;
 
   //--------------------------------------------------------------------------------------------------------------------
-
   /**
    * Object constructor.
    *
@@ -180,10 +179,10 @@ class BaseResponse implements Response
    */
   public function __construct(string $content = '', int $status = 200)
   {
+    $this->headers = new ResponseHeader();
     $this->setContent($content)
          ->setStatus($status)
          ->setVersion('1.1');
-    $this->headers = new ResponseHeader();
   }
 
   //--------------------------------------------------------------------------------------------------------------------
