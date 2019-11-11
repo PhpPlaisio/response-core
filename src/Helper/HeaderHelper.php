@@ -40,6 +40,36 @@ class HeaderHelper
   }
 
   //--------------------------------------------------------------------------------------------------------------------
+  /**
+   * Returns the value for a HTTP Cache-Control field.
+   *
+   * @param bool $isStatic True if and only if the URL always serves the same content.
+   * @param bool $isPublic True if and only if the content is public.
+   *
+   * @return string|null
+   */
+  public static function cacheControl(bool $isStatic, bool $isPublic): ?string
+  {
+    if ($isStatic)
+    {
+      if ($isPublic)
+      {
+        $value = 'public, store, cache';
+      }
+      else
+      {
+        $value = 'private, store, cache';
+      }
+    }
+    else
+    {
+      $value = 'no-cache, no-store, must-revalidate';
+    }
+
+    return $value;
+  }
+
+  //--------------------------------------------------------------------------------------------------------------------
 }
 
 //----------------------------------------------------------------------------------------------------------------------

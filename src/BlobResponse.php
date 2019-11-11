@@ -27,26 +27,11 @@ class BlobResponse extends BaseResponse
   {
     parent::__construct($blob['blb_data'], 200);
 
-    $this->headers->set('Content-Disposition', HeaderHelper::contentDisposition($disposition, $blob['blb_filename']))
-                  ->set('Content-Type', $blob['blb_mime_type'])
+    $this->headers->set('Content-Type', $blob['blb_mime_type'])
                   ->set('Content-Length', Cast::toOptString($blob['blb_size']))
+                  ->set('Content-Disposition', HeaderHelper::contentDisposition($disposition, $blob['blb_filename']))
+                  ->set('Cache-Control', HeaderHelper::cacheControl($isStatic, $isPublic))
                   ->setTimestamp('Last-Modified', $blob['blb_timestamp']);
-
-    if ($isStatic)
-    {
-      if ($isPublic)
-      {
-        $this->headers->set('Cache-Control', 'public, store, cache');
-      }
-      else
-      {
-        $this->headers->set('Cache-Control', 'private, store, cache');
-      }
-    }
-    else
-    {
-      $this->headers->set('Cache-Control', 'no-cache, no-store, must-revalidate');
-    }
   }
 
   //--------------------------------------------------------------------------------------------------------------------

@@ -73,27 +73,11 @@ class FileResponse extends BaseResponse
 
     $this->filename = $filename ?? $this->file->getBasename();
 
-    $this->headers->set('Content-Transfer-Encoding', 'binary')
-                  ->set('Content-Disposition', HeaderHelper::contentDisposition($disposition, $this->filename))
-                  ->set('Content-Type', $mimeType)
+    $this->headers->set('Content-Type', $mimeType)
                   ->set('Content-Length', Cast::toOptString($this->file->getSize()))
+                  ->set('Content-Disposition', HeaderHelper::contentDisposition($disposition, $this->filename))
+                  ->set('Cache-Control', HeaderHelper::cacheControl($isStatic, $isPublic))
                   ->setTimestamp('Last-Modified', $this->file->getMTime());
-
-    if ($isStatic)
-    {
-      if ($isPublic)
-      {
-        $this->headers->set('Cache-Control', 'public, store, cache');
-      }
-      else
-      {
-        $this->headers->set('Cache-Control', 'private, store, cache');
-      }
-    }
-    else
-    {
-      $this->headers->set('Cache-Control', 'no-cache, no-store, must-revalidate');
-    }
   }
 
   //--------------------------------------------------------------------------------------------------------------------
