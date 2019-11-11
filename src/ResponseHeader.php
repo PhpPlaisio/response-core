@@ -59,6 +59,21 @@ class ResponseHeader
 
   //--------------------------------------------------------------------------------------------------------------------
   /**
+   * Returns the value of a header field. Returns null if the header field is not set.
+   *
+   * @param string $name The name of the header field.
+   *
+   * @return string|null
+   */
+  public function get($name): ?string
+  {
+    $key = self::normalKey($name);
+
+    return $this->headers[$key] ?? null;
+  }
+
+  //--------------------------------------------------------------------------------------------------------------------
+  /**
    * Removes a header.
    *
    * @param string $name The name of the header.
