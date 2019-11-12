@@ -307,6 +307,8 @@ class BaseResponse implements Response
    */
   protected function sendHeaders(): void
   {
+    if (headers_sent()) return;
+
     header(sprintf('HTTP/%s %s %s', $this->version, $this->status, self::$httpStatuses[$this->status] ?? '-'),
            true,
            $this->status);
