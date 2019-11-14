@@ -1,10 +1,10 @@
 <?php
 declare(strict_types=1);
 
-namespace SetBased\Abc\Response;
+namespace Plaisio\Response;
 
-use SetBased\Abc\Helper\Cast;
-use SetBased\Abc\Response\Helper\HeaderHelper;
+use Plaisio\Response\Helper\HeaderHelper;
+use SetBased\Helper\Cast;
 
 /**
  * An HTTP response sending a BLOB to the user agent.

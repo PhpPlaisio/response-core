@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace SetBased\Abc\Response;
+namespace Plaisio\Response;
 
 /**
  * Redirects the user agent to a specified URL with status code 303 (See Other).

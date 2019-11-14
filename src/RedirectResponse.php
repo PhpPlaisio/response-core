@@ -1,9 +1,9 @@
 <?php
 declare(strict_types=1);
 
-namespace SetBased\Abc\Response;
+namespace Plaisio\Response;
 
-use SetBased\Abc\Helper\Url;
+use Plaisio\Helper\Url;
 
 /**
  * Redirects the user agent to a specified URL with status code 3xx.

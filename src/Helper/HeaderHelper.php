@@ -1,9 +1,9 @@
 <?php
 declare(strict_types=1);
 
-namespace SetBased\Abc\Response\Helper;
+namespace Plaisio\Response\Helper;
 
-use SetBased\Abc\Helper\Html;
+use Plaisio\Helper\Html;
 
 /**
  * Utility functions for HTTP headers.

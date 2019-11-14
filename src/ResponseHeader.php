@@ -1,10 +1,9 @@
 <?php
 declare(strict_types=1);
 
-namespace SetBased\Abc\Response;
+namespace Plaisio\Response;
 
-use DateTimeInterface;
-use SetBased\Abc\Helper\Cast;
+use SetBased\Helper\Cast;
 
 /**
  * All headers for an HTTP response.
@@ -134,8 +133,8 @@ class ResponseHeader
   /**
    * Sets a header field with datetime value as defined by (RFC 7231)[https://tools.ietf.org/html/rfc7231].
    *
-   * @param string                            $name  The name of the header field.
-   * @param DateTimeInterface|string|int|null $value The value of the header field.
+   * @param string                             $name  The name of the header field.
+   * @param \DateTimeInterface|string|int|null $value The value of the header field.
    *
    * @return $this
    */

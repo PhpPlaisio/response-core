@@ -1,10 +1,10 @@
 <?php
 declare(strict_types=1);
 
-namespace SetBased\Abc\Response\Test;
+namespace Plaisio\Response\Test;
 
 use PHPUnit\Framework\TestCase;
-use SetBased\Abc\Response\NotFoundResponse;
+use Plaisio\Response\NotFoundResponse;
 
 /**
  * Test cases for class NotFoundResponse.

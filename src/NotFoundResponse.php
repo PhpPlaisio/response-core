@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace SetBased\Abc\Response;
+namespace Plaisio\Response;
 
 /**
  * Response for bad request 404 (Not Found).

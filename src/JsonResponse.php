@@ -1,10 +1,10 @@
 <?php
 declare(strict_types=1);
 
-namespace SetBased\Abc\Response;
+namespace Plaisio\Response;
 
-use SetBased\Abc\Helper\Cast;
-use SetBased\Abc\Helper\Html;
+use Plaisio\Helper\Html;
+use SetBased\Helper\Cast;
 
 /**
  * An HTTP response sending a dynamically generated JSON data to the user agent.

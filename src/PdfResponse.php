@@ -1,11 +1,10 @@
 <?php
 declare(strict_types=1);
 
-namespace SetBased\Abc\Response;
+namespace Plaisio\Response;
 
-use DateTimeImmutable;
-use SetBased\Abc\Helper\Cast;
-use SetBased\Abc\Response\Helper\HeaderHelper;
+use Plaisio\Response\Helper\HeaderHelper;
+use SetBased\Helper\Cast;
 
 /**
  * An HTTP response sending a dynamically generated PDF document to the user agent.
@@ -35,7 +34,7 @@ class PdfResponse extends BaseResponse
                   ->set('Content-Length', Cast::toOptString(strlen($pdf)))
                   ->set('Content-Disposition', HeaderHelper::contentDisposition($disposition, $filename))
                   ->set('Cache-Control', HeaderHelper::cacheControl(false, false))
-                  ->setTimestamp('Last-Modified', new DateTimeImmutable());
+                  ->setTimestamp('Last-Modified', new \DateTimeImmutable());
   }
 
   //--------------------------------------------------------------------------------------------------------------------

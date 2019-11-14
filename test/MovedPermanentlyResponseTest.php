@@ -1,10 +1,10 @@
 <?php
 declare(strict_types=1);
 
-namespace SetBased\Abc\Response\Test;
+namespace Plaisio\Response\Test;
 
 use PHPUnit\Framework\TestCase;
-use SetBased\Abc\Response\MovedPermanentlyResponse;
+use Plaisio\Response\MovedPermanentlyResponse;
 
 /**
  * Test cases for class MovedPermanentlyResponse.

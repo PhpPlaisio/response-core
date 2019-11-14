@@ -1,21 +1,21 @@
 {
-  "name": "setbased/abc-response-core",
-  "description": "SetBased ABC-Framework: Core Response",
+  "name": "plaisio/response-core",
+  "description": "PhpPlaisio: Core Response",
   "keywords": [
-    "SetBased ABC-Framework",
+    "PhpPlaisio",
     "Core",
     "Response"
   ],
   "license": "MIT",
   "require": {
     "php": ">=7.1.0",
-    "ext-mbstring": "*",
     "ext-json": "*",
-    "setbased/abc-html": "^2.2",
-    "setbased/abc-response": "^1.0.0",
-    "setbased/abc-url": "^2.0.0",
+    "ext-mbstring": "*",
+    "plaisio/html": "^3.0.0",
+    "plaisio/response": "^2.0.0",
+    "plaisio/url": "^3.0.0",
     "setbased/exception": "^2.0.0",
-    "setbased/helper-cast": "^1.2.0",
+    "setbased/helper-cast": "^2.0.0",
     "willdurand/jsonp-callback-validator": "^1.1.0"
   },
   "require-dev": {
@@ -24,12 +24,12 @@
   },
   "autoload": {
     "psr-4": {
-      "SetBased\\Abc\\Response\\": "src/"
+      "Plaisio\\Response\\": "src/"
     }
   },
   "autoload-dev": {
     "psr-4": {
-      "SetBased\\Abc\\Response\\Test\\": "test/"
+      "Plaisio\\Response\\Test\\": "test/"
     }
   },
   "config": {

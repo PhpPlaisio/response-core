@@ -1,10 +1,10 @@
 <?php
 declare(strict_types=1);
 
-namespace SetBased\Abc\Response\Test;
+namespace Plaisio\Response\Test;
 
 use PHPUnit\Framework\TestCase;
-use SetBased\Abc\Response\InternalServerErrorResponse;
+use Plaisio\Response\InternalServerErrorResponse;
 
 /**
  * Test cases for class InternalServerErrorResponse.
