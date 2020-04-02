@@ -11,12 +11,12 @@
     "php": ">=7.3",
     "ext-json": "*",
     "ext-mbstring": "*",
-    "plaisio/helper-html": "^1.0",
-    "plaisio/helper-url": "^1.0",
-    "plaisio/response": "^1.0",
+    "plaisio/helper-html": "^1.1",
+    "plaisio/helper-url": "^1.1",
+    "plaisio/response": "^1.1",
     "setbased/exception": "^2.1",
     "setbased/helper-cast": "^2.1",
-    "willdurand/jsonp-callback-validator": "^1.1.0"
+    "willdurand/jsonp-callback-validator": "^1.1"
   },
   "require-dev": {
     "phing/phing": "^2.0",
