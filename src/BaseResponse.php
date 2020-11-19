@@ -3,6 +3,8 @@ declare(strict_types=1);
 
 namespace Plaisio\Response;
 
+use Plaisio\Kernel\Nub;
+
 /**
  * An HTTP response.
  */
@@ -171,6 +173,7 @@ class BaseResponse implements Response
   protected $version;
 
   //--------------------------------------------------------------------------------------------------------------------
+
   /**
    * Object constructor.
    *
@@ -257,6 +260,7 @@ class BaseResponse implements Response
   public function send(): Response
   {
     $this->sendHeaders();
+    $this->sendCookies();
     $this->sendContent();
 
     return $this;
@@ -314,7 +318,6 @@ class BaseResponse implements Response
            $this->status);
 
     $this->headers->send();
-    // xxx cookies
   }
 
   //--------------------------------------------------------------------------------------------------------------------
@@ -330,6 +333,27 @@ class BaseResponse implements Response
     $this->content = $content;
 
     return $this;
+  }
+
+  //--------------------------------------------------------------------------------------------------------------------
+  /**
+   * Sends the cookies to user agent.
+   */
+  private function sendCookies()
+  {
+    $this->headers->send();
+    foreach (Nub::$nub->cookie as $cookie)
+    {
+      if ($cookie->expires!==null)
+      {
+        setcookie($cookie->name, $cookie->value, ['expires'  => $cookie->expires,
+                                                  'path'     => $cookie->path,
+                                                  'domain'   => $cookie->domain,
+                                                  'secure'   => $cookie->secure,
+                                                  'httpOnly' => $cookie->httpOnly,
+                                                  'sameSite' => $cookie->sameSite]);
+      }
+    }
   }
 
   //--------------------------------------------------------------------------------------------------------------------
