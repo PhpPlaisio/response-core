@@ -11,6 +11,7 @@
     "php": ">=7.3",
     "ext-json": "*",
     "ext-mbstring": "*",
+    "plaisio/console": "^2.4",
     "plaisio/cookie": "^1.0",
     "plaisio/helper-html": "^1.1",
     "plaisio/helper-url": "^1.1",
