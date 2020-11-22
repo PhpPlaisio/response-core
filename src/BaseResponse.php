@@ -202,6 +202,8 @@ class BaseResponse implements Response
     if (self::$skipClearOutput) return;
 
     OB::endCleanBuffers();
+
+    ob_start();
   }
 
   //--------------------------------------------------------------------------------------------------------------------
