@@ -3,6 +3,7 @@ declare(strict_types=1);
 
 namespace Plaisio\Response;
 
+use Plaisio\Helper\OB;
 use Plaisio\Kernel\Nub;
 
 /**
@@ -200,22 +201,7 @@ class BaseResponse implements Response
     // Return immediately if skipClearOutput is set.
     if (self::$skipClearOutput) return;
 
-    $level = ob_get_level();
-
-    // The following manual level counting is to deal with zlib.output_compression set to On.
-    for ($i = $level; $i>0; --$i)
-    {
-      if (!@ob_end_clean())
-      {
-        ob_clean();
-      }
-    }
-
-    if ($level>0)
-    {
-      // Restart output buffer in order to allow modification of headers.
-      ob_start();
-    }
+    OB::endCleanBuffers();
   }
 
   //--------------------------------------------------------------------------------------------------------------------
