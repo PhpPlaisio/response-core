@@ -343,6 +343,18 @@ class BaseResponse implements Response
   }
 
   //--------------------------------------------------------------------------------------------------------------------
+  /**
+   * Returns the headers of the response. The keys of the array are the normalized header names and the values of the
+   * array are the corresponding values of the headers.
+   *
+   * @return array
+   */
+  public function getHeaders(): array
+  {
+    return $this->headers->getHeaders();
+  }
+
+  //--------------------------------------------------------------------------------------------------------------------
 }
 
 //----------------------------------------------------------------------------------------------------------------------

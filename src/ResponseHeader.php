@@ -37,14 +37,6 @@ class ResponseHeader
 
   //--------------------------------------------------------------------------------------------------------------------
   /**
-   * Object constructor.
-   */
-  public function __construct()
-  {
-  }
-
-  //--------------------------------------------------------------------------------------------------------------------
-  /**
    * Returns the normalized value of a key..
    *
    * @param string $key The key.
@@ -64,11 +56,23 @@ class ResponseHeader
    *
    * @return string|null
    */
-  public function get($name): ?string
+  public function get(string $name): ?string
   {
     $key = self::normalKey($name);
 
     return $this->headers[$key] ?? null;
+  }
+
+  //--------------------------------------------------------------------------------------------------------------------
+  /**
+   * Returns the headers. The keys of the array are the normalized header names and the values of the array are the
+   * corresponding values of the headers.
+   *
+   * @return array
+   */
+  public function getHeaders(): array
+  {
+    return $this->headers;
   }
 
   //--------------------------------------------------------------------------------------------------------------------
