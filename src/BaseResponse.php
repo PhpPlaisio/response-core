@@ -3,6 +3,7 @@ declare(strict_types=1);
 
 namespace Plaisio\Response;
 
+use Plaisio\Cookie\Cookie;
 use Plaisio\Helper\OB;
 use Plaisio\Kernel\Nub;
 
@@ -174,6 +175,7 @@ class BaseResponse implements Response
   protected string $version = '1.1';
 
   //--------------------------------------------------------------------------------------------------------------------
+
   /**
    * Object constructor.
    *
@@ -340,15 +342,13 @@ class BaseResponse implements Response
     $this->headers->send();
     foreach (Nub::$nub->cookie as $cookie)
     {
-      if ($cookie->expires!==null)
-      {
-        setcookie($cookie->name, $cookie->value, ['expires'  => $cookie->expires,
-                                                  'path'     => $cookie->path,
-                                                  'domain'   => $cookie->domain,
-                                                  'secure'   => $cookie->secure,
-                                                  'httpOnly' => $cookie->httpOnly,
-                                                  'sameSite' => $cookie->sameSite]);
-      }
+      /** @var Cookie $cookie */
+      setcookie($cookie->name, $cookie->value, ['expires'  => $cookie->expires,
+                                                'path'     => $cookie->path,
+                                                'domain'   => $cookie->domain,
+                                                'secure'   => $cookie->secure,
+                                                'httpOnly' => $cookie->httpOnly,
+                                                'sameSite' => $cookie->sameSite]);
     }
   }
 
