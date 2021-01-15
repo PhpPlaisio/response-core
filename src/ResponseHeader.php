@@ -26,14 +26,14 @@ class ResponseHeader
    *
    * @var array
    */
-  private $headers = [];
+  private array $headers = [];
 
   /**
    * The map from the normalized value of the header name to the original header name.
    *
    * @var array
    */
-  private $names = [];
+  private array $names = [];
 
   //--------------------------------------------------------------------------------------------------------------------
   /**

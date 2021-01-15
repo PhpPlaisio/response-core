@@ -18,21 +18,21 @@ class FileResponse extends BaseResponse
    *
    * @var \SplFileInfo
    */
-  private $file;
+  private \SplFileInfo $file;
 
   /**
    * The name under which the file must be send.
    *
    * @var string
    */
-  private $filename;
+  private string $filename;
 
   /**
    * If and only if true the file will removed after sending the data.
    *
    * @var bool
    */
-  private $remove = false;
+  private bool $remove = false;
 
   //--------------------------------------------------------------------------------------------------------------------
   /**
