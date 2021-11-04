@@ -11,9 +11,9 @@
     "php": ">=7.4",
     "ext-json": "*",
     "ext-mbstring": "*",
-    "plaisio/console": "^2.4.8",
+    "plaisio/console": "^2.4.9",
     "plaisio/cookie": "^2.0.1",
-    "plaisio/helper-html": "^2.0.0",
+    "plaisio/helper-html": "^3.0.0",
     "plaisio/helper-ob": "^1.1.1",
     "plaisio/helper-url": "^1.1.2",
     "plaisio/kernel": "^3.1.1",
@@ -23,8 +23,8 @@
     "willdurand/jsonp-callback-validator": "^1.1.0"
   },
   "require-dev": {
-    "phing/phing": "^2.16.3",
-    "phpunit/phpunit": "^9.5.0"
+    "phing/phing": "^2.17.0",
+    "phpunit/phpunit": "^9.5.10"
   },
   "autoload": {
     "psr-4": {
