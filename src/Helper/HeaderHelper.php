@@ -12,7 +12,7 @@ class HeaderHelper
 {
   //--------------------------------------------------------------------------------------------------------------------
   /**
-   * Returns the value for a HTTP Content-Disposition field.
+   * Returns the value for an HTTP Content-Disposition field.
    *
    * @param string      $disposition Either 'inline' or 'attachment'.
    * @param string|null $filename    The filename.
@@ -41,10 +41,10 @@ class HeaderHelper
 
   //--------------------------------------------------------------------------------------------------------------------
   /**
-   * Returns the value for a HTTP Cache-Control field.
+   * Returns the value for an HTTP Cache-Control field.
    *
-   * @param bool $isStatic True if and only if the URL always serves the same content.
-   * @param bool $isPublic True if and only if the content is public.
+   * @param bool $isStatic Whether the URL always serves the same content.
+   * @param bool $isPublic Whether the content is public.
    *
    * @return string|null
    */

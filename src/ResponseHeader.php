@@ -37,7 +37,7 @@ class ResponseHeader
 
   //--------------------------------------------------------------------------------------------------------------------
   /**
-   * Returns the normalized value of a key..
+   * Returns the normalized value of a key.
    *
    * @param string $key The key.
    *

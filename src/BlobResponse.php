@@ -25,7 +25,7 @@ class BlobResponse extends BaseResponse
    */
   public function __construct(array $blob, string $disposition, bool $isStatic = false, bool $isPublic = false)
   {
-    parent::__construct($blob['blb_data'], 200);
+    parent::__construct($blob['blb_data']);
 
     $this->headers->set('Content-Type', $blob['blb_mime_type'])
                   ->set('Content-Length', Cast::toOptString($blob['blb_size']))

@@ -21,14 +21,14 @@ class FileResponse extends BaseResponse
   private \SplFileInfo $file;
 
   /**
-   * The name under which the file must be send.
+   * The name under which the file must be sent.
    *
    * @var string
    */
   private string $filename;
 
   /**
-   * If and only if true the file will removed after sending the data.
+   * Whether the file will be removed after sending the data.
    *
    * @var bool
    */
@@ -42,8 +42,8 @@ class FileResponse extends BaseResponse
    * @param string|null $filename
    * @param string|null $mimeType    The mime type of the file.
    * @param string      $disposition Either 'inline' or 'attachment'.
-   * @param bool        $isStatic    True if and only if the URL always serves the same content.
-   * @param bool        $isPublic    True if and only if the content is public.
+   * @param bool        $isStatic    Whether the URL always serves the same content.
+   * @param bool        $isPublic    Whether the content is public.
    *
    * @api
    * @since 1.0.0
@@ -55,7 +55,7 @@ class FileResponse extends BaseResponse
                               bool $isStatic = false,
                               bool $isPublic = false)
   {
-    parent::__construct('', 200);
+    parent::__construct();
 
     switch (true)
     {
@@ -82,13 +82,13 @@ class FileResponse extends BaseResponse
 
   //--------------------------------------------------------------------------------------------------------------------
   /**
-   * Set the option for removing the file after sending the the user agent.
+   * Set the option for removing the file after sending the user agent.
    *
    * @param bool $remove If and onl if true the file will e removed after sending.
    *
    * @return $this
    */
-  public function remove($remove = true): self
+  public function remove(bool $remove = true): self
   {
     $this->remove = $remove;
 

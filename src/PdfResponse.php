@@ -28,7 +28,7 @@ class PdfResponse extends BaseResponse
                               ?string $filename,
                               string $disposition = 'attachment')
   {
-    parent::__construct($pdf, 200);
+    parent::__construct($pdf);
 
     $this->headers->set('Content-Type', 'application/pdf')
                   ->set('Content-Length', Cast::toOptString(strlen($pdf)))

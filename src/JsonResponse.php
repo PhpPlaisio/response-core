@@ -25,7 +25,7 @@ class JsonResponse extends BaseResponse
    */
   public function __construct($data, bool $isJson = false, ?string $callback = null)
   {
-    parent::__construct($this->create($data, $isJson, $callback), 200);
+    parent::__construct($this->create($data, $isJson, $callback));
 
     $type = sprintf('%s; charset=%s',
                     ($callback===null) ? 'application/json' : 'application/javascript',
