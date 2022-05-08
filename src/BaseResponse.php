@@ -175,16 +175,15 @@ class BaseResponse implements Response
   protected string $version = '1.1';
 
   //--------------------------------------------------------------------------------------------------------------------
-
   /**
    * Object constructor.
    *
-   * @param string $content The content of the response.
-   * @param int    $status  The status code of the response.
+   * @param string|null $content The content of the response.
+   * @param int         $status  The status code of the response.
    */
-  public function __construct(string $content = '', int $status = 200)
+  public function __construct(?string $content = '', int $status = 200)
   {
-    $this->content = $content;
+    $this->content = $content ?? '';
     $this->headers = new ResponseHeader();
     $this->status  = $status;
   }

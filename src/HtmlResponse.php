@@ -15,10 +15,10 @@ class HtmlResponse extends BaseResponse
   /**
    * Object constructor.
    *
-   * @param string $content The content of the response.
-   * @param int    $status  The status code of the response.
+   * @param string|null $content The content of the response.
+   * @param int         $status  The status code of the response.
    */
-  public function __construct(string $content = '', int $status = 200)
+  public function __construct(?string $content = '', int $status = 200)
   {
     parent::__construct($content, $status);
 
