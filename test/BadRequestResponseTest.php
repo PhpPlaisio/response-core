@@ -12,11 +12,24 @@ use Plaisio\Response\BadRequestResponse;
 class BadRequestResponseTest extends TestCase
 {
   //--------------------------------------------------------------------------------------------------------------------
-  public function test1()
+  /**
+   * Test content is empty.
+   */
+  public function testContent()
   {
     $response = new BadRequestResponse();
 
     self::assertSame('', $response->getContent());
+  }
+
+  //--------------------------------------------------------------------------------------------------------------------
+  /**
+   * Test HTTP status is 400.
+   */
+  public function testStatus()
+  {
+    $response = new BadRequestResponse();
+
     self::assertSame(400, $response->getStatus());
   }
 

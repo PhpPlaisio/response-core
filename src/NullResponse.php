@@ -4,7 +4,7 @@ declare(strict_types=1);
 namespace Plaisio\Response;
 
 /**
- * An HTTP response sending nothing (no body, no headers).
+ * An HTTP response sending nothing (not a body, nor headers).
  *
  * Use this response when a response to the user agent has been sent already.
  */
@@ -45,7 +45,7 @@ class NullResponse implements Response
 
   //--------------------------------------------------------------------------------------------------------------------
   /**
-   * Sends nothing (no body, no headers).
+   * Sends nothing (not a body, nor headers).
    *
    * @return $this
    */

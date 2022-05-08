@@ -30,7 +30,7 @@ class MovedPermanentlyResponseTest extends TestCase
    */
   public function testUrlAbsoluteUrl1(): void
   {
-    $response = new MovedPermanentlyResponse('https:/www.setbased.nl');
+    $response = new MovedPermanentlyResponse('https://www.setbased.nl');
     self::assertSame('/', $response->headers->get('location'));
   }
 
@@ -40,8 +40,8 @@ class MovedPermanentlyResponseTest extends TestCase
    */
   public function testUrlAbsoluteUrl2(): void
   {
-    $response = new MovedPermanentlyResponse('https:/www.setbased.nl', false);
-    self::assertSame('https:/www.setbased.nl', $response->headers->get('location'));
+    $response = new MovedPermanentlyResponse('https://www.setbased.nl', false);
+    self::assertSame('https://www.setbased.nl', $response->headers->get('location'));
   }
 
   //--------------------------------------------------------------------------------------------------------------------

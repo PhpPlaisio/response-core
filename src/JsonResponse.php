@@ -20,7 +20,6 @@ class JsonResponse extends BaseResponse
    * @param string|null $callback The JSONP callback.
    *
    * @api
-   *
    * @since 1.0.0
    */
   public function __construct($data, bool $isJson = false, ?string $callback = null)
@@ -66,7 +65,6 @@ class JsonResponse extends BaseResponse
 
     if ($callback===null)
     {
-
       return $json;
     }
 
