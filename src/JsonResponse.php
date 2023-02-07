@@ -22,7 +22,7 @@ class JsonResponse extends BaseResponse
    * @api
    * @since 1.0.0
    */
-  public function __construct($data, bool $isJson = false, ?string $callback = null)
+  public function __construct(mixed $data, bool $isJson = false, ?string $callback = null)
   {
     parent::__construct($this->create($data, $isJson, $callback));
 
@@ -43,7 +43,7 @@ class JsonResponse extends BaseResponse
    *
    * @return string
    */
-  private function create($data, bool $isJson, ?string $callback): string
+  private function create(mixed $data, bool $isJson, ?string $callback): string
   {
     if (!$isJson)
     {

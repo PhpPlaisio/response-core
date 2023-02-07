@@ -142,7 +142,7 @@ class ResponseHeader
    *
    * @return $this
    */
-  public function setTimestamp(string $name, $value): self
+  public function setTimestamp(string $name, mixed $value): self
   {
     if ($value===null)
     {

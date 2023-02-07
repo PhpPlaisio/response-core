@@ -8,23 +8,25 @@
   ],
   "license": "MIT",
   "require": {
-    "php": ">=7.4",
+    "php": ">=8.1",
     "ext-json": "*",
     "ext-mbstring": "*",
-    "plaisio/console": "^2.5.0",
-    "plaisio/cookie": "^2.0.1",
-    "plaisio/helper-html": "^4.0.0",
-    "plaisio/helper-ob": "^1.1.1",
-    "plaisio/helper-url": "^1.1.2",
-    "plaisio/kernel": "^3.1.1",
-    "plaisio/response": "^2.0.0",
-    "setbased/exception": "^2.2.0",
-    "setbased/helper-cast": "^2.1.1",
-    "willdurand/jsonp-callback-validator": "^1.1.0"
+    "plaisio/cookie": "^2.1.0",
+    "plaisio/helper-html": "^4.1.0",
+    "plaisio/helper-ob": "^1.2.0",
+    "plaisio/helper-url": "^1.2.0",
+    "plaisio/kernel": "^3.2.1",
+    "plaisio/response": "^2.1.0",
+    "setbased/exception": "^2.3.0",
+    "setbased/helper-cast": "^3.0.0",
+    "willdurand/jsonp-callback-validator": "^2.0.0"
   },
+  "minimum-stability": "dev",
+  "prefer-stable": true,
   "require-dev": {
-    "phing/phing": "^2.17.0",
-    "phpunit/phpunit": "^9.5.11"
+    "phing/phing": "^3.0.0-RC4",
+    "phpunit/phpunit": "^9.6.3",
+    "plaisio/console-kernel": "^1.0.1"
   },
   "autoload": {
     "psr-4": {
@@ -38,6 +40,9 @@
   },
   "config": {
     "bin-dir": "bin/",
-    "sort-packages": true
+    "sort-packages": true,
+    "allow-plugins": {
+      "phing/phing-composer-configurator": true
+    }
   }
 }
